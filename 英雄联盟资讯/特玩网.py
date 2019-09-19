@@ -30,7 +30,10 @@ def tewanwang():
         url = li.xpath('@href')[0]
         source = requests.get(url).content.decode('utf-8')
         # print(source)
-        sult = etree.HTML(source).xpath('//*[@id="text"]')[0]
+        try:
+            sult = etree.HTML(source).xpath('//*[@id="text"]')[0]
+        except:
+            continue
         div_str = etree.tostring(sult,encoding='utf-8').decode('utf-8')
         if not os.path.exists(r"D:\Ó¢ÐÛÁªÃËÍ¼Æ¬\%s" % str(local_day)):
             os.mkdir(r"D:\Ó¢ÐÛÁªÃËÍ¼Æ¬\%s" % str(local_day))
