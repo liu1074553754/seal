@@ -11,6 +11,7 @@ def duowandianjing():
     response = requests.get('http://news.duowan.com/').content.decode('utf-8')
     #盒子xpath
     lists = etree.HTML(response).xpath('/html/body/div[2]/div[1]/div[4]/div[1]/ul[1]/li')
+    print(len(lists))
     for li in lists:
         #文章日期
         try:

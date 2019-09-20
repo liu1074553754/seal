@@ -11,6 +11,7 @@ def tewanwang():
     response = requests.get('http://lol.te5.com/list/').content.decode('utf-8')
     #盒子xpath
     lists = etree.HTML(response).xpath('//*[@id="tagfc0be193fd7134d6e1cd67fc5241edad"]/a')
+    print(len(lists))
     for li in lists:
         #文章日期
         try:

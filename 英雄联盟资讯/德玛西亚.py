@@ -46,6 +46,7 @@ def demaxiya():
 def demaxiya_index():
     response = requests.get('https://www.demaxiya.com/').content.decode('utf-8')
     lists = etree.HTML(response).xpath('/html/body/div[9]/div[2]/div[1]/dl')
+    print(len(lists))
     for li in lists:
         #ÎÄÕÂÈÕÆÚ
         try:
